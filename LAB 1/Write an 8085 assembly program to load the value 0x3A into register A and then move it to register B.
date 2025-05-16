@@ -1,0 +1,5 @@
+// Author Mansoor ahmad Wani
+
+MVI A, 3AH    ; Load immediate value 3A into accumulator A
+MOV B, A      ; Copy the value from A to B
+HLT           ; Halt program
