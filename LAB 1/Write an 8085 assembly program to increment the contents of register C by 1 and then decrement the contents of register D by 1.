@@ -1,0 +1,5 @@
+// Author Mansoor Ahmad Wani
+
+INR C        ; Increment contents of register C by 1
+DCR D        ; Decrement contents of register D by 1
+HLT          ; Halt program
