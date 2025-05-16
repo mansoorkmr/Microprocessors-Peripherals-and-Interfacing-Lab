@@ -1,0 +1,39 @@
+// AUTHOR MANSOOR AHMAD WANI
+
+; Registers used:
+; H-L pair as memory pointer
+; B as counter (16 bytes)
+; A as accumulator (for addition)
+; Carry flag to handle carry in addition
+
+ORG 0000H        ; Program start
+
+START:  
+    LXI H, 5000H     ; HL points to first number (start)
+    LXI D, 5010H     ; DE points to second number (start)
+    LXI B, 0010H     ; B = 16 (byte counter)
+    LXI H, 5000H     ; HL points to first number (reset pointer for addition)
+    MOV C, B         ; C = 16 (byte counter)
+    LXI H, 5020H     ; HL points to result storage
+
+    MVI B, 16        ; Load counter (16 bytes)
+    MVI C, 0         ; Clear carry flag (we will use the processor carry flag)
+
+ADD_LOOP:
+    MOV A, M         ; Load byte from first number (HL)
+    INX H            ; HL++
+    MOV E, A         ; Save it temporarily in E
+
+    MOV A, M         ; Load byte from second number (DE)
+    INX D            ; DE++
+    ADD E            ; Add byte from first number to this
+
+    MOV M, A         ; Store sum byte in result location (HL)
+    INX H            ; HL++
+
+    DCR B            ; Decrement byte counter
+    JNZ ADD_LOOP     ; Repeat for all 16 bytes
+
+    HLT              ; End program
+
+END
