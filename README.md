@@ -49,3 +49,10 @@ This repository contains assembly language programs and interfacing assignments 
 
 ## Repository Structure
 
+Microprocessors-Lab/
+│
+├── programs/ # Assembly programs
+├── interfacing/ # Circuit diagrams and interfacing notes
+├── documentation/ # Lab manual, datasheets, reports
+└── README.md
+
