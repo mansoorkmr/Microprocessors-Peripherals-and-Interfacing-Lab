@@ -1,0 +1,6 @@
+// Author Mansoor Ahmad Wani
+
+LDA 2050H     ; Load first number into accumulator
+ADD M         ; Add second number at 2051H (memory next to 2050H)
+STA 2052H     ; Store result at 2052H
+HLT           ; Halt program
